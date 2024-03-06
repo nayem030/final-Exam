@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<div style="width:50%; margin:auto;">
+    <h1>{{ item.title }}</h1>
+    <p>{{ item.description }}</p>
+    <img src="{{ item.image.url }}" alt="{{ item.title }}">
+    <br>
+    <br>
+    <a  class="btn btn-warning btn-sm" href="{% url 'itemlist' %}">Back to Item List</a>
+    <br> 
+    <a  class="btn btn-warning btn-sm" href="{% url 'itemedit' pk=item.pk %}">Edit post</a>
+    <br>
+    <a  class="btn btn-warning btn-sm" href="{% url 'itemdelete' pk=item.pk %}">Delete post</a>
+
+
+</div>
+
+    {% endblock %}

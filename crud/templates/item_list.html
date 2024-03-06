@@ -1,0 +1,16 @@
+
+  {% extends "base.html" %}
+  {% block content %}
+  <h1>Item List</h1>
+    <ul>
+      <div style="width:50%; margin:auto;" > 
+        {% for item in items %}
+        <li><a href="{% url 'itemdetails' pk=item.pk %}">{{ item.title }}</a></li>
+           {% endfor %}
+
+      </div>
+    </ul>
+    
+    <a href="{% url 'itemadd' %}">Add New Item</a>
+  {% endblock %}
+
