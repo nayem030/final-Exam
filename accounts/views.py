@@ -25,10 +25,10 @@ def register(request):
 
 def user_login(request):
     if request.method == 'POST':
-        user_name = request.POST.get('username')
+        email= request.POST.get('email')
         password = request.POST.get('password')
-        user = auth.authenticate(request, username = user_name, password = password,)
-        auth.login(request, user)
+        user = authenticate(email= email, password = password,)
+        login(request, user)
         return redirect('profile')
         
     return render(request, 'accounts/signin.html')
