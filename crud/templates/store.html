@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="blog-container">
+<h1>Post Items</h1>
+   {% for i in Items %}
+   <div class="col-md-4">
+    <figure class="card card-product-grid">
+      <h1>{{ i.title }}</h1>
+<p>{{ i.description }}</p>
+<img src="{{ i.image.url }}" alt="{{ i.title }}">
+      <!-- img-wrap.// -->
+      <figcaption class="info-wrap">
+        <div class="fix-height">
+          <a href="{{ item.get_url }}" class="title"
+            >{{ item.product_name }}</a
+          >
+          <div class="price-wrap mt-2">
+          </div>
+          <!-- price-wrap.// -->
+        </div>
+      </figcaption>
+    </figure>
+  </div>
+  <!-- col.// -->
+   
+   {% endfor %}
+</div>
+
+
+{% endblock content %}
+
+
+

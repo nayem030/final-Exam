@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +25,7 @@ SECRET_KEY = 'django-insecure-c+!%93eucd2c%c%c&jddp%q=hp^)(kqfsyf(#b86q$pahd1x=k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -84,9 +83,10 @@ WSGI_APPLICATION = 'project13.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default':dj_database_url.config(       
-     default='postgres://math_mart_user:D0c3h3RPHx09Jdedoe12YXzQF8kXmgiM@dpg-cnomsan109ks73b95reg-a.oregon-postgres.render.com/math_mart',   
-     )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 
