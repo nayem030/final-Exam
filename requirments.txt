@@ -37,3 +37,4 @@ virtualenv
 virtualenvwrapper-win
 psycopg2-binary
 dj-database-url
+pyautogen
